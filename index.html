@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harbor Market | 心地よい暮らしのECサイト</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="top-bar">
+    <div class="logo" aria-label="Harbor Market">
+      <span class="logo-mark">⛵</span>
+      <span class="logo-text">Harbor Market</span>
+    </div>
+    <nav class="top-nav" aria-label="主要ナビゲーション">
+      <a href="#catalog">商品一覧</a>
+      <a href="#about">コンセプト</a>
+      <a href="#newsletter">ニュースレター</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <button class="cart-toggle" aria-expanded="false" aria-controls="cart-panel">
+      <span class="cart-count" data-cart-count>0</span>
+      🛒 カート
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>お気に入りの暮らしを、港町からお届け</h1>
+        <p>Harbor Market は、海辺の暮らしをイメージした雑貨やインテリアを集めたオンラインセレクトショップです。厳選したアイテムで、毎日に穏やかな風を吹き込みましょう。</p>
+        <a class="cta-button" href="#catalog">商品を見に行く</a>
+      </div>
+      <div class="hero-visual" role="presentation"></div>
+    </section>
+
+    <section class="filters" aria-labelledby="filter-heading">
+      <h2 id="filter-heading">商品を探す</h2>
+      <div class="filter-grid">
+        <label class="filter-field">
+          <span>キーワード</span>
+          <input type="search" placeholder="キーワードで検索" data-search-input />
+        </label>
+        <label class="filter-field">
+          <span>カテゴリ</span>
+          <select data-category-filter>
+            <option value="all">すべて</option>
+            <option value="interior">インテリア</option>
+            <option value="kitchen">キッチン</option>
+            <option value="wellness">ウェルネス</option>
+            <option value="outdoor">アウトドア</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>最大価格: <strong data-price-value>¥20,000</strong></span>
+          <input type="range" min="2000" max="20000" step="1000" value="20000" data-price-filter />
+        </label>
+        <div class="filter-field checkbox">
+          <input type="checkbox" id="only-featured" data-featured-filter />
+          <label for="only-featured">人気商品だけを表示</label>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalog" class="catalog" aria-live="polite">
+      <h2>新着 &amp; 人気アイテム</h2>
+      <div class="product-grid" data-product-list>
+        <!-- 商品カードがここにレンダリングされます -->
+      </div>
+      <p class="empty-state" data-empty-state hidden>条件に合う商品が見つかりませんでした。</p>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2>海辺のクラフトマンシップ</h2>
+        <p>Harbor Market のアイテムは、世界各地の海辺の街で活躍する小さな工房やアーティストから仕入れています。持続可能な素材を使用した、ていねいで温もりのあるプロダクトが揃っています。</p>
+        <ul>
+          <li>プラスチックを極力使わないサステナブル梱包</li>
+          <li>売上の 2% を海洋環境保護団体に寄付</li>
+          <li>45 日間の返品保証</li>
+        </ul>
+      </div>
+      <div class="about-visual" role="presentation"></div>
+    </section>
+
+    <section class="highlights">
+      <article class="highlight-card">
+        <h3>週替わりギフトラッピング</h3>
+        <p>人気のギフトラッピングが週替わりで登場。大切な方への贈り物に特別な演出を。</p>
+      </article>
+      <article class="highlight-card">
+        <h3>メンバー限定ライブ配信</h3>
+        <p>作家さんによる制作の裏側をライブでお届け。質問タイムもご用意しています。</p>
+      </article>
+      <article class="highlight-card">
+        <h3>無料サンプルお試し</h3>
+        <p>人気のアロマオイルやお茶のサンプルを、初回購入で無料プレゼント。</p>
+      </article>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+      <div class="newsletter-inner">
+        <h2>港から届く便りを受け取る</h2>
+        <p>新商品やセール情報を、月 2 回のメールマガジンでお届けします。</p>
+        <form class="newsletter-form" aria-label="ニュースレター登録フォーム">
+          <label>
+            <span class="sr-only">メールアドレス</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <button type="submit">登録する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div>
+      <h3>カスタマーサポート</h3>
+      <p><a href="mailto:support@harbor-market.example">support@harbor-market.example</a></p>
+      <p>受付時間: 平日 10:00-18:00</p>
+    </div>
+    <div>
+      <h3>所在地</h3>
+      <p>〒240-0000 神奈川県横浜市中区港町 1-2-3</p>
+      <p>Tel: 045-000-1234</p>
+    </div>
+    <div>
+      <h3>フォローする</h3>
+      <ul class="social-links">
+        <li><a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
+        <li><a href="https://www.pinterest.com" target="_blank" rel="noreferrer">Pinterest</a></li>
+        <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer">YouTube</a></li>
+      </ul>
+    </div>
+    <p class="footer-note">© <span data-current-year></span> Harbor Market. All rights reserved.</p>
+  </footer>
+
+  <aside id="cart-panel" class="cart" aria-hidden="true">
+    <header class="cart-header">
+      <h2>ショッピングカート</h2>
+      <button class="cart-close" type="button" aria-label="カートを閉じる">×</button>
+    </header>
+    <div class="cart-body" data-cart-body>
+      <p class="cart-empty" data-cart-empty>カートに商品はありません。</p>
+      <ul class="cart-items" data-cart-items></ul>
+    </div>
+    <footer class="cart-footer">
+      <div class="cart-summary">
+        <span>合計</span>
+        <strong data-cart-total>¥0</strong>
+      </div>
+      <button class="checkout-button" type="button">ご注文手続きへ</button>
+    </footer>
+  </aside>
+
+  <div class="cart-backdrop" data-cart-backdrop hidden></div>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <figure>
+        <img src="" alt="" loading="lazy" />
+        <figcaption>
+          <h3></h3>
+          <p class="product-description"></p>
+          <div class="product-meta">
+            <span class="product-price"></span>
+            <span class="product-category"></span>
+          </div>
+        </figcaption>
+      </figure>
+      <button type="button" class="add-to-cart">カートに追加</button>
+    </article>
+  </template>
+
+  <template id="cart-item-template">
+    <li class="cart-item">
+      <div class="cart-item-info">
+        <h4 class="cart-item-name"></h4>
+        <span class="cart-item-price"></span>
+      </div>
+      <div class="cart-item-controls">
+        <label>
+          <span class="sr-only">数量</span>
+          <input type="number" min="1" value="1" />
+        </label>
+        <button type="button" class="remove-item" aria-label="商品をカートから削除">削除</button>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
